@@ -4,12 +4,12 @@
 
 int main() {
   TimedDoor tDoor(5);
-  tDoor.lock();
   try {
-    tDoor.unlock();
+    tDoor.lock();
+    tDoor.throwState();
   }
   catch(std::string message) {
-    std::cout << message; 
+    std::cout << message;
   }
 
   return 0;

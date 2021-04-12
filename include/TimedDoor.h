@@ -34,7 +34,10 @@ class TimedDoor : public Door {
   int iTimeout;
   bool opened;
  public:
-  explicit TimedDoor(int newTimeout) : iTimeout(newTimeout), opened(false), adapter(new DoorTimerAdapter(*this)) {}
+  explicit TimedDoor(int newTimeout) :
+  iTimeout(newTimeout),
+  opened(false),
+  adapter(new DoorTimerAdapter(*this)) {}
   bool isDoorOpened() override { return opened; }
   void unlock() override;
   void lock() override {opened = false; }
